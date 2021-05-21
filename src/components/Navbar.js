@@ -4,7 +4,7 @@ import { FaAlignRight } from "react-icons/fa";
 import logo from "../images/logo.svg";
 export default class Navbar extends Component {
   state = {
-    isOpen: false
+    isOpen: false,
   };
   handleToggle = () => {
     this.setState({ isOpen: !this.state.isOpen });
