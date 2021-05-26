@@ -1,5 +1,6 @@
 import React from "react";
 import Room from "./Room";
+
 const RoomsList = ({ rooms }) => {
   if (rooms.length === 0) {
     return (
@@ -8,6 +9,7 @@ const RoomsList = ({ rooms }) => {
       </div>
     );
   }
+
   return (
     <section className="roomslist">
       <div className="roomslist-center">

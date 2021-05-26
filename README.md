@@ -68,3 +68,16 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+- https://www.freecodecamp.org/news/ultimate-guide-to-aws-amplify-and-reacxt/
+- https://github.com/kneekey23/Amplify-Storage-React
+
+* https://www.newline.co/fullstack-react/articles/using-create-react-app-with-a-server/
+* https://github.com/fullstackreact/food-lookup-demo
+* https://www.freecodecamp.org/news/create-a-mern-stack-app-with-a-serverless-backend/
+* https://www.freecodecamp.org/news/nodejs-and-cloud-firestore-tutorial-build-a-home-inventory-system/
+* https://www.freecodecamp.org/news/python-vs-javascript-what-are-the-key-differences-between-the-two-popular-programming-languages/
+* https://devcenter.heroku.com/articles/getting-started-with-nodejs
+* https://www.freecodecamp.org/news/how-to-deploy-a-node-application-and-database-to-heroku/
+* https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
+* https://kutt.it/ZSo48H

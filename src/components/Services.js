@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { FaCocktail, FaHiking, FaShuttleVan, FaBeer } from "react-icons/fa";
 import Title from "./Title";
+
 export default class Services extends Component {
   state = {
     services: [
@@ -26,6 +27,7 @@ export default class Services extends Component {
       },
     ],
   };
+
   render() {
     return (
       <section className="services">

@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import defaultImg from "../images/room-1.jpeg";
 import PropTypes from "prop-types";
 import { memo } from "react";
+
 const Room = memo(({ room }) => {
   const { name, slug, images, price } = room;
   // console.log(name);
+
   return (
     <article className="room">
       <div className="img-container">
@@ -31,4 +33,5 @@ Room.propTypes = {
     price: PropTypes.number.isRequired,
   }),
 };
+
 export default Room;

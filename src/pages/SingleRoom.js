@@ -34,6 +34,7 @@ export default class SingleRoom extends Component {
         </div>
       );
     }
+
     const {
       name,
       description,
@@ -54,6 +55,9 @@ export default class SingleRoom extends Component {
           <Banner title={`${name} room`}>
             <Link to="/rooms" className="btn-primary">
               back to rooms
+            </Link>
+            <Link to="/rooms" className="btn-primary">
+              book
             </Link>
           </Banner>
         </StyledHero>
