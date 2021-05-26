@@ -2,6 +2,7 @@ import React from "react";
 import { useContext } from "react";
 import { RoomContext } from "../context";
 import Title from "./Title";
+
 // get all unique values
 const getUnique = (items, value) => {
   return [...new Set(items.map(item => item[value]))];
@@ -10,6 +11,7 @@ const getUnique = (items, value) => {
 const RoomsFilter = ({ rooms }) => {
   // react hooks
   const context = useContext(RoomContext);
+
   const {
     handleChange,
     type,
@@ -20,19 +22,22 @@ const RoomsFilter = ({ rooms }) => {
     minSize,
     maxSize,
     breakfast,
-    pets
+    pets,
   } = context;
 
   // get unique types
   let types = getUnique(rooms, "type");
+
   // add all
   types = ["all", ...types];
+
   // map to jsx
   types = types.map((item, index) => (
     <option key={index} value={item}>
       {item}
     </option>
   ));
+
   // get unique capacity
   let people = getUnique(rooms, "capacity");
   people = people.map((item, index) => (
@@ -40,6 +45,7 @@ const RoomsFilter = ({ rooms }) => {
       {item}
     </option>
   ));
+
   return (
     <section className="filter-container">
       <Title title="search rooms" />
