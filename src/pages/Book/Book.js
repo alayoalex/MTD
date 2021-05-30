@@ -109,7 +109,7 @@ class ContactData extends Component {
         elementConfig: {
           options: [
             { value: "cash", displayValue: "Cash" },
-            { value: "card", displayValue: "Card" },
+            { value: "card", displayValue: "Credit Card" },
             { value: "crypto", displayValue: "Crypto Currency" },
           ],
         },

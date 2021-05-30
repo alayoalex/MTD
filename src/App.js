@@ -12,9 +12,16 @@ import Navbar from "./components/Navbar";
 
 import { Switch, Route } from "react-router-dom";
 
+import Amplify from "aws-amplify";
+import awsconfig from "./aws-exports";
+import { AmplifySignOut, withAuthenticator } from "@aws-amplify/ui-react";
+
+Amplify.configure(awsconfig);
+
 function App() {
   return (
     <>
+      <AmplifySignOut />
       <Navbar />
       <Switch>
         <Route exact path="/" component={Home} />
@@ -28,4 +35,4 @@ function App() {
   );
 }
 
-export default App;
+export default withAuthenticator(App);
