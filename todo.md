@@ -9,21 +9,27 @@ browsers.
 
 ## Validation fields
 
-If you enter invalid characters into your validation fields, or exceed the maximum length, then
+[x] If you enter invalid characters into your validation fields, or exceed the maximum length, then
 errors and bugs can easily crop up. These bugs are extremely common and typically not that
 severe, but there are a few that can truly make or break your software.
 
 - 3 errors related to this one.
 
+* En el formulario _Contact Data_, el campo del nombre no tiene limite maximo de caracteres, ademas permite
+  caracteres numericos y caracteres no alfanumericos. Lo mismo sucede con el campo para la calle y el pais.
+  Sin embargo el campo para el codico zip esta bien validad a un minimo y maximo de cinco caracteres numericos, como es en los Estados Unidos.
+
 ## Date control
 
-If your site or app requires age restrictions (such as with dating apps or websites for alcoholic
+[-] If your site or app requires age restrictions (such as with dating apps or websites for alcoholic
 beverages), there are often bugs related to date control. These are most commonly found in
 the registration forms where people are inputting their birth date. Why? Because developers
 often only test for the exact cut-off date, when in reality you have to test for the dates
 immediately preceding and following the cut-off date.
 
 - 2 error related to this one.
+
+* Agregados los componente para el trabajo con fechas, faltan las validaciones erroneas.
 
 ## Crashes caused by button clicks
 

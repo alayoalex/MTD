@@ -4,6 +4,9 @@ import Spinner from "../../components/UI/Spinner/Spinner";
 import "./Book.css";
 import Input from "../../components/UI/Input/Input";
 import { withAuthenticator } from "@aws-amplify/ui-react";
+import DateAnt from "../../components/DatesAnt";
+import Birth from "../../components/DatesAntBirth";
+import "antd/dist/antd.css";
 
 class ContactData extends Component {
   state = {
@@ -119,6 +122,7 @@ class ContactData extends Component {
     },
     formIsValid: false,
     loading: false,
+    // startDate: new Date(),
   };
 
   orderHandler = event => {
@@ -200,6 +204,11 @@ class ContactData extends Component {
     this.setState({ orderForm: updatedOrderForm, formIsValid: formIsValid });
   };
 
+  onSelectionDateRange = dates => {
+    this.setState({ dates: dates });
+    console.log(dates);
+  };
+
   render() {
     const formElementsArray = [];
     for (let key in this.state.orderForm) {
@@ -222,9 +231,24 @@ class ContactData extends Component {
             changed={event => this.inputChangedHandler(event, formElement.id)}
           />
         ))}
-        <Button btnType="Success" disabled={!this.state.formIsValid}>
-          ORDER
-        </Button>
+
+        {/* <div>
+          <Date onSelectionDateRange={this.onSelectionDateRange} />
+        </div> */}
+
+        <div>
+          <DateAnt onSelectionDateRange={this.onSelectionDateRange} />
+        </div>
+
+        <div>
+          <Birth />
+        </div>
+
+        <div>
+          <Button btnType="Success" disabled={!this.state.formIsValid}>
+            ORDER
+          </Button>
+        </div>
       </form>
     );
     if (this.state.loading) {
