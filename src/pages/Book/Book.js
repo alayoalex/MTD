@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-
 import Button from "../../components/UI/Button/Button";
 import Spinner from "../../components/UI/Spinner/Spinner";
 import "./Book.css";
-// import axios from "../../../axios-orders";
 import Input from "../../components/UI/Input/Input";
+import { withAuthenticator } from "@aws-amplify/ui-react";
 
 class ContactData extends Component {
   state = {
@@ -240,4 +239,4 @@ class ContactData extends Component {
   }
 }
 
-export default ContactData;
+export default withAuthenticator(ContactData);
