@@ -38,7 +38,7 @@ export const data = [
         "Full-sized, pH-balanced toiletries",
         "Complimentary refreshments",
         "Adequate safety/security",
-        "Internet",
+        "Amazing Internet",
         "Comfortable beds",
       ],
       images: [

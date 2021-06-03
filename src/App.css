@@ -133,10 +133,10 @@ h6 {
 .nav-links a:hover {
   color: var(--primaryColor);
 }
-
 .show-nav {
   height: 100px;
 }
+
 @media screen and (min-width: 768px) {
   .nav-btn {
     display: none;
