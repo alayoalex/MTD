@@ -66,26 +66,13 @@ class ContactData extends Component {
         valid: false,
         touched: false,
       },
-      age: {
-        elementType: "input",
+      birth: {
+        elementType: "date",
         elementConfig: {
-          type: "number",
-          placeholder: "Age",
+          type: "date",
+          placeholder: "Birth Date",
         },
-        value: "18",
-        validation: {
-          required: true,
-        },
-        valid: false,
-        touched: false,
-      },
-      cant_days: {
-        elementType: "input",
-        elementConfig: {
-          type: "number",
-          placeholder: "Days",
-        },
-        value: "3",
+        // value: "18",
         validation: {
           required: true,
         },
@@ -110,6 +97,7 @@ class ContactData extends Component {
         elementType: "select",
         elementConfig: {
           options: [
+            { value: "pay", displayValue: "-- To Be Paid In --" },
             { value: "cash", displayValue: "Cash" },
             { value: "card", displayValue: "Credit Card" },
             { value: "crypto", displayValue: "Crypto Currency" },
@@ -118,6 +106,19 @@ class ContactData extends Component {
         value: "",
         validation: {},
         valid: true,
+      },
+      booking_days: {
+        elementType: "date",
+        elementConfig: {
+          type: "date",
+          placeholder: "Booking Date",
+        },
+        // value: "3",
+        validation: {
+          required: true,
+        },
+        valid: false,
+        touched: false,
       },
     },
     formIsValid: false,
@@ -219,34 +220,50 @@ class ContactData extends Component {
     }
     let form = (
       <form onSubmit={this.orderHandler}>
-        {formElementsArray.map(formElement => (
-          <Input
-            key={formElement.id}
-            elementType={formElement.config.elementType}
-            elementConfig={formElement.config.elementConfig}
-            value={formElement.config.value}
-            invalid={!formElement.config.valid}
-            shouldValidate={formElement.config.validation}
-            touched={formElement.config.touched}
-            changed={event => this.inputChangedHandler(event, formElement.id)}
-          />
-        ))}
+        {formElementsArray.map(formElement => {
+          if (formElement.id === "birth") {
+            return (
+              <div className="row col-md-12" style={{ marginTop: 20 }}>
+                <div className="col-md-6">
+                  <label>Birth Date</label>
+                </div>
+                <div className="col-md-6">
+                  <Birth />
+                </div>
+              </div>
+            );
+          } else if (formElement.id === "booking_days") {
+            return (
+              <div className="row" style={{ marginTop: 20 }}>
+                <div className="col-md-6">
+                  <label>Select the Booking Days</label>
+                </div>
+                <div className="col-md-6">
+                  <DateAnt onSelectionDateRange={this.onSelectionDateRange} />
+                </div>
+              </div>
+            );
+          } else {
+            return (
+              <Input
+                key={formElement.id}
+                elementType={formElement.config.elementType}
+                elementConfig={formElement.config.elementConfig}
+                value={formElement.config.value}
+                invalid={!formElement.config.valid}
+                shouldValidate={formElement.config.validation}
+                touched={formElement.config.touched}
+                changed={event =>
+                  this.inputChangedHandler(event, formElement.id)
+                }
+              />
+            );
+          }
+        })}
 
-        {/* <div>
-          <Date onSelectionDateRange={this.onSelectionDateRange} />
-        </div> */}
-
-        <div>
-          <DateAnt onSelectionDateRange={this.onSelectionDateRange} />
-        </div>
-
-        <div>
-          <Birth />
-        </div>
-
-        <div>
+        <div style={{ marginTop: 20 }}>
           <Button btnType="Success" disabled={!this.state.formIsValid}>
-            ORDER
+            BOOK
           </Button>
         </div>
       </form>

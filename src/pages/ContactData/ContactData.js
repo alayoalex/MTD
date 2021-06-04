@@ -68,7 +68,7 @@ class ContactData extends Component {
         elementType: "input",
         elementConfig: {
           type: "email",
-          placeholder: "Your E-Mail",
+          placeholder: "Your e-mail",
         },
         value: "",
         validation: {
@@ -78,17 +78,15 @@ class ContactData extends Component {
         valid: false,
         touched: false,
       },
-      deliveryMethod: {
-        elementType: "select",
+      message: {
+        elementType: "textarea",
         elementConfig: {
-          options: [
-            { value: "fastest", displayValue: "Fastest" },
-            { value: "cheapest", displayValue: "Cheapest" },
-          ],
+          type: "textarea",
+          placeholder: "Your Message",
         },
         value: "",
         validation: {},
-        valid: true,
+        valid: false,
       },
     },
     formIsValid: false,
@@ -197,7 +195,7 @@ class ContactData extends Component {
           />
         ))}
         <Button btnType="Success" disabled={!this.state.formIsValid}>
-          ORDER
+          SENT
         </Button>
       </form>
     );
