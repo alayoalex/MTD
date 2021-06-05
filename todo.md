@@ -1,6 +1,6 @@
 ## Browser incompatibility
 
-When people are using your website, they’re likely using it through one of many browser
+[x] When people are using your website, they’re likely using it through one of many browser
 extensions. Chrome, Firefox, Internet Explorer, Opera, and Safari are just a few of the most
 popular browsers. As such, websites need to be compatible with all of the major types of
 browsers in order to ensure good user experience across the board. Without instituting

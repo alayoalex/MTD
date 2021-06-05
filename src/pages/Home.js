@@ -4,8 +4,18 @@ import Hero from "../components/Hero";
 import Banner from "../components/Banner";
 import Services from "../components/Services";
 import FeaturedRooms from "../components/FeaturedRooms";
+import useIsLoggedIn from "../components/IsAuth";
 
-const home = () => {
+const Home = () => {
+  const isLoggedIn = useIsLoggedIn();
+
+  const login = !isLoggedIn ? (
+    <Link to="/login" className="btn-primary">
+      {" "}
+      log in{" "}
+    </Link>
+  ) : null;
+
   return (
     <>
       <Hero>
@@ -16,6 +26,7 @@ const home = () => {
           <Link to="/rooms" className="btn-primary">
             our rooms
           </Link>
+          {login}
         </Banner>
       </Hero>
       <Services />
@@ -24,4 +35,4 @@ const home = () => {
   );
 };
 
-export default home;
+export default Home;

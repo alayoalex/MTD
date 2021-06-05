@@ -1,17 +1,18 @@
 import React, { Component } from "react";
 import { FaCocktail, FaHiking, FaShuttleVan, FaBeer } from "react-icons/fa";
 import Title from "./Title";
+import is from "is_js";
 
 export default class Services extends Component {
   state = {
     services: [
       {
-        icon: <FaCocktail />,
+        icon: is.firefox() ? <FaCocktail /> : "Icon Not Found",
         title: "Free Cocktails",
         info: "Our services are the best in the world.",
       },
       {
-        icon: <FaHiking />,
+        icon: is.not.opera() ? <FaHiking /> : "Icon Not Found",
         title: "Endless Hiking",
         info: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias molestias eius libero?",
       },

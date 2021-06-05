@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaAlignRight } from "react-icons/fa";
 import logo from "../images/logo.svg";
-import { AmplifySignOut, AmplifySignInButton } from "@aws-amplify/ui-react";
+import { AmplifySignOut } from "@aws-amplify/ui-react";
 import useIsLoggedIn from "./IsAuth";
 
 const Navbar = () => {
@@ -35,7 +35,7 @@ const Navbar = () => {
             <Link to="/contact">Contact</Link>
           </li>
         </ul>
-        {isLoggedIn ? <AmplifySignOut /> : <AmplifySignInButton />}
+        {isLoggedIn ? <AmplifySignOut /> : null}
       </div>
     </nav>
   );

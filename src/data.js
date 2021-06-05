@@ -15,6 +15,10 @@ import img10 from "./images/room-10.jpeg";
 import img11 from "./images/room-11.jpeg";
 import img12 from "./images/room-12.jpeg";
 
+import is from "is_js";
+
+const img11111111 = "Not Found";
+
 export const data = [
   {
     sys: {
@@ -45,7 +49,8 @@ export const data = [
         {
           fields: {
             file: {
-              url: img1,
+              // eslint-disable-next-line no-undef
+              url: is.firefox() ? img11111111 : img1,
             },
           },
         },

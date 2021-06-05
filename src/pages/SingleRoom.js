@@ -20,6 +20,7 @@ export default class SingleRoom extends Component {
   // componentDidMount() {
   //   console.log(this.props);
   // }
+
   render() {
     const { getRoom } = this.context;
     const room = getRoom(this.state.slug);
@@ -47,7 +48,6 @@ export default class SingleRoom extends Component {
       images,
     } = room;
     const [...defaultImages] = images;
-    console.log(defaultImages);
 
     return (
       <>
@@ -61,6 +61,7 @@ export default class SingleRoom extends Component {
             </Link>
           </Banner>
         </StyledHero>
+
         <section className="single-room">
           <div className="single-room-images">
             {defaultImages.map((item, index) => (

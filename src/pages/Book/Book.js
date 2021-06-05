@@ -3,7 +3,7 @@ import Button from "../../components/UI/Button/Button";
 import Spinner from "../../components/UI/Spinner/Spinner";
 import "./Book.css";
 import Input from "../../components/UI/Input/Input";
-import { withAuthenticator } from "@aws-amplify/ui-react";
+// import { withAuthenticator } from "@aws-amplify/ui-react";
 import DateAnt from "../../components/DatesAnt";
 import Birth from "../../components/DatesAntBirth";
 import "antd/dist/antd.css";
@@ -76,7 +76,7 @@ class ContactData extends Component {
         validation: {
           required: true,
         },
-        valid: false,
+        valid: true,
         touched: false,
       },
       email: {
@@ -117,7 +117,7 @@ class ContactData extends Component {
         validation: {
           required: true,
         },
-        valid: false,
+        valid: true,
         touched: false,
       },
     },
@@ -132,7 +132,8 @@ class ContactData extends Component {
     const formData = {};
     for (let formElementIdentifier in this.state.orderForm) {
       formData[formElementIdentifier] =
-        this.state.orderForm[formElementIdentifier].value;
+        // eslint-disable-next-line no-undef
+        this.state.orderForm[formElementIdentifie].value;
     }
     // const order = {
     //   ingredients: this.props.ingredients,
@@ -280,4 +281,4 @@ class ContactData extends Component {
   }
 }
 
-export default withAuthenticator(ContactData);
+export default ContactData;
