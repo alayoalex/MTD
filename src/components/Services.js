@@ -9,11 +9,11 @@ export default class Services extends Component {
       {
         icon: is.firefox() ? <FaCocktail /> : "Icon Not Found",
         title: "Free Cocktails",
-        info: "Our services are the best in the world.",
+        info: "Take a Free Cocktails to enjoy an amazing time with your family and fiancee.",
       },
       {
         icon: is.not.opera() ? <FaHiking /> : "Icon Not Found",
-        title: "Endless Hiking",
+        title: "Endles Hiking",
         info: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias molestias eius libero?",
       },
       {
@@ -23,7 +23,7 @@ export default class Services extends Component {
       },
       {
         icon: <FaBeer />,
-        title: "Strongest Beer",
+        title: "Strongest Ber",
         info: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias molestias eius libero?",
       },
     ],

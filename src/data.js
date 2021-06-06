@@ -653,7 +653,7 @@ export const data = [
       id: "12",
     },
     fields: {
-      name: "family deluxe",
+      name: "famili deluxe",
       slug: "family-deluxe",
       type: "family",
       price: 500,
