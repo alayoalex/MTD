@@ -1,4 +1,4 @@
-import moment from "moment";
+// import moment from "moment";
 import { DatePicker, Space } from "antd";
 import { Component } from "react";
 
@@ -13,10 +13,10 @@ class Birth extends Component {
     return result;
   };
 
-  disabledDate = current => {
-    // Can not select days before today and today
-    return current && current > moment().endOf("day");
-  };
+  // disabledDate = current => {
+  //   // Can not select days before today and today
+  //   return current && current > moment().endOf("day");
+  // };
 
   // disabledDateTime = () => {
   //   return {
@@ -44,7 +44,10 @@ class Birth extends Component {
   render() {
     return (
       <Space direction="vertical" size={12}>
-        <DatePicker format="YYYY-MM-DD" disabledDate={this.disabledDate} />
+        <DatePicker
+          format="YYYY-MM-DD"
+          // disabledDate={this.disabledDate}
+        />
       </Space>
     );
   }

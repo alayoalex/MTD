@@ -4,12 +4,15 @@ import Spinner from "../../components/UI/Spinner/Spinner";
 import "./Book.css";
 import Input from "../../components/UI/Input/Input";
 // import { withAuthenticator } from "@aws-amplify/ui-react";
-import DateAnt from "../../components/DatesAnt";
+// import DateAnt from "../../components/DatesAnt";
 import Birth from "../../components/DatesAntBirth";
 import "antd/dist/antd.css";
+import Modal from "../../components/Modal";
+import { FaRegTimesCircle } from "react-icons/fa";
 
 class ContactData extends Component {
   state = {
+    showModal: false,
     orderForm: {
       name: {
         elementType: "input",
@@ -33,6 +36,7 @@ class ContactData extends Component {
         value: "",
         validation: {
           required: true,
+          maxLength: 10,
         },
         valid: false,
         touched: false,
@@ -67,14 +71,15 @@ class ContactData extends Component {
         touched: false,
       },
       birth: {
-        elementType: "date",
+        elementType: "input",
         elementConfig: {
-          type: "date",
-          placeholder: "Birth Date",
+          type: "text",
+          placeholder: "Age",
         },
         // value: "18",
         validation: {
           required: true,
+          isNumeric: true,
         },
         valid: true,
         touched: false,
@@ -124,6 +129,14 @@ class ContactData extends Component {
     formIsValid: false,
     loading: false,
     // startDate: new Date(),
+  };
+
+  showModal = () => {
+    this.setState({ showModal: true });
+  };
+
+  hideModal = () => {
+    this.setState({ showModal: false });
   };
 
   orderHandler = event => {
@@ -220,27 +233,29 @@ class ContactData extends Component {
       });
     }
     let form = (
-      <form onSubmit={this.orderHandler}>
+      <>
         {formElementsArray.map(formElement => {
-          if (formElement.id === "birth") {
-            return (
-              <div className="row col-md-12" style={{ marginTop: 20 }}>
-                <div className="col-md-6">
-                  <label>Birth Date</label>
-                </div>
-                <div className="col-md-6">
-                  <Birth />
-                </div>
-              </div>
-            );
-          } else if (formElement.id === "booking_days") {
+          // if (formElement.id === "birth") {
+          //   return (
+          //     <div className="row col-md-12" style={{ marginTop: 20 }}>
+          //       <div className="col-md-6">
+          //         <label>Birth Date</label>
+          //       </div>
+          //       <div className="col-md-6">
+          //         <Birth />
+          //       </div>
+          //     </div>
+          //   );
+          // } else
+          if (formElement.id === "booking_days") {
             return (
               <div className="row" style={{ marginTop: 20 }}>
                 <div className="col-md-6">
-                  <label>Select the Booking Days</label>
+                  <label>Select Start and End Dates</label>
                 </div>
                 <div className="col-md-6">
-                  <DateAnt onSelectionDateRange={this.onSelectionDateRange} />
+                  <Birth onSelectionDateRange={this.onSelectionDateRange} />
+                  <Birth onSelectionDateRange={this.onSelectionDateRange} />
                 </div>
               </div>
             );
@@ -261,13 +276,7 @@ class ContactData extends Component {
             );
           }
         })}
-
-        <div style={{ marginTop: 20 }}>
-          <Button btnType="Success" disabled={!this.state.formIsValid}>
-            BOOK
-          </Button>
-        </div>
-      </form>
+      </>
     );
     if (this.state.loading) {
       form = <Spinner />;
@@ -275,7 +284,30 @@ class ContactData extends Component {
     return (
       <div className="ContactData">
         <h4>Fill the Form</h4>
+        <Modal show={this.state.showModal} handleClose={this.hideModal}>
+          <h1>
+            <FaRegTimesCircle />
+          </h1>
+          <h1>Webapp Critical Error</h1>
+          <p>
+            An Unknow error has been detected during de execution of the
+            application. Please, contact the admins for more information. Here
+            the logs:
+            "]=this["webpackJsonpreact-amplified"]||[],i=f.push.bind(f);f.push=r,f=f.slice();f
+            or(var u=0;u;var l=i;t()([])ript src="/static/js/3.ae9a2d8c.chunk.j
+            s"iptcript src="/static/js/main.7e712100.chunk.js"scriptody
+          </p>
+        </Modal>
         {form}
+        <div style={{ marginTop: 20 }}>
+          <Button
+            btnType="Success"
+            disabled={!this.state.formIsValid}
+            clicked={this.showModal}
+          >
+            BOOK
+          </Button>
+        </div>
       </div>
     );
   }

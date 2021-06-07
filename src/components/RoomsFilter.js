@@ -2,6 +2,7 @@ import React from "react";
 import { useContext } from "react";
 import { RoomContext } from "../context";
 import Title from "./Title";
+import is from "is_js";
 
 // get all unique values
 const getUnique = (items, value) => {
@@ -81,16 +82,20 @@ const RoomsFilter = ({ rooms }) => {
         {/* room price */}
         <div className="form-group">
           <label htmlFor="price">room price ${price}</label>
-          <input
-            type="range"
-            name="price"
-            min={minPrice}
-            max={maxPrice}
-            id="price"
-            value={price}
-            onChange={handleChange}
-            className="form-control"
-          />
+          {is.not.safari() ? (
+            <input
+              type="range"
+              name="price"
+              min={minPrice}
+              max={maxPrice}
+              id="price"
+              value={price}
+              onChange={handleChange}
+              className="form-control"
+            />
+          ) : (
+            "This componente is not supported in this browser"
+          )}
         </div>
         {/* end of room price*/}
         {/* size */}

@@ -5,17 +5,19 @@ const { RangePicker } = DatePicker;
 
 const DateAnt = props => {
   const { onSelectionDateRange } = props;
+  // eslint-disable-next-line no-unused-vars
   const [dates, setDates] = useState([]);
   const [hackValue, setHackValue] = useState();
   const [value, setValue] = useState();
-  const disabledDate = current => {
-    if (!dates || dates.length === 0) {
-      return false;
-    }
-    const tooLate = dates[0] && current.diff(dates[0], "days") > 7;
-    const tooEarly = dates[1] && dates[1].diff(current, "days") > 7;
-    return tooEarly || tooLate;
-  };
+
+  // const disabledDate = current => {
+  //   if (!dates || dates.length === 0) {
+  //     return false;
+  //   }
+  //   const tooLate = dates[0] && current.diff(dates[0], "days") > 7;
+  //   const tooEarly = dates[1] && dates[1].diff(current, "days") > 7;
+  //   return tooEarly || tooLate;
+  // };
 
   const onOpenChange = open => {
     if (open) {
@@ -29,7 +31,7 @@ const DateAnt = props => {
   return (
     <RangePicker
       value={hackValue || value}
-      disabledDate={disabledDate}
+      // disabledDate={disabledDate}
       onCalendarChange={val => {
         setDates(val);
         onSelectionDateRange(val);

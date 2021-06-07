@@ -56,11 +56,19 @@ export default class SingleRoom extends Component {
             <Link to="/rooms" className="btn-primary">
               back to rooms
             </Link>
-            <Link to="/book" className="btn-primary">
+            {/* <Link to="/book" className="btn-primary">
               book
-            </Link>
+            </Link> */}
           </Banner>
         </StyledHero>
+
+        <section>
+          <div style={{ marginTop: 20, marginLeft: 600 }}>
+            <Link to="/book" className="btn-primary">
+              book room
+            </Link>
+          </div>
+        </section>
 
         <section className="single-room">
           <div className="single-room-images">

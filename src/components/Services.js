@@ -7,12 +7,12 @@ export default class Services extends Component {
   state = {
     services: [
       {
-        icon: is.firefox() ? <FaCocktail /> : "Icon Not Found",
+        icon: is.not.firefox() ? "Icon Not Found" : <FaCocktail />,
         title: "Free Cocktails",
         info: "Take a Free Cocktails to enjoy an amazing time with your family and fiancee.",
       },
       {
-        icon: is.not.opera() ? <FaHiking /> : "Icon Not Found",
+        icon: is.not.safari() ? <FaHiking /> : "Icon Not Found",
         title: "Endles Hiking",
         info: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias molestias eius libero?",
       },

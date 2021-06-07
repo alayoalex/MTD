@@ -7,10 +7,10 @@ browsers in order to ensure good user experience across the board. Without insti
 compatibility testing, however, you may not be able to catch bugs that only appear in certain
 browsers.
 
-- Una de las imágenes en la vista que lista las habitaciones no carga en el Firefox y un icono
-  en la lista de los servicios solo carga en el Chrome.
-- Algunas cosas no abren en el navegador Safari.
-- Los componentes que permiten filtrar las habitaciones disponibles no se ven igual en diferentes navegadores.
+- Una de las imágenes en la vista que lista las habitaciones (cuando vas a la vista _Our Rooms_, que lista todas las habitaciones disponible, la que se llama _Single Economy_, no carga su imagen en esa vista en miniatura, ni tampoco la imagen principal en la vista detalle de ella cuando pinchas en _Features_) no carga en el Firefox.
+- Un icono en la lista de los servicios solo carga en el Firefox, específicamente el icono del servicio _Free Cocktails_.
+- Algunas cosas no abren en el navegador Safari: El icono para _Free Shuttle_ no se encuentra (Not Found Error), y la barra azul para filtrar por el precio de las habitaciones no sale y muestra un mensaje de que no es soportada en ese navegador.
+- Los componentes que permiten filtrar las habitaciones disponibles no se ven igual en diferentes navegadores. Basicamente no es un error, sino cuestion de visualizaciones principalmente de la forma en que cada navegador lo renderiza y visualiza.
 
 ## Validation fields
 
@@ -22,8 +22,8 @@ severe, but there are a few that can truly make or break your software.
 
 * En el formulario _Contact Data_, el campo del nombre no tiene limite maximo de caracteres, además permite
   caracteres numericos y caracteres no alfanumericos.
-* Lo mismo sucede con el campo para la calle y el pais.
-* Sin embargo el campo para el codico zip esta bien validad a un minimo y maximo de cinco caracteres numéricos, como es en los Estados Unidos.
+* En el Campo de Calle “Street” en el formulario “book” permitir que solo se puedan entrar 10 caracteres.
+* En el formulario de contacto NO validado el campo de email y que se puede entrar cualquier formato para correo.
 
 ## Date control
 
@@ -35,8 +35,8 @@ immediately preceding and following the cut-off date.
 
 - 2 error related to this one.
 
-* Se pueden agregar fechas de nacimiento hasta el día de hoy, por lo que personas con un día de edad puede
-  hacer reservaciones. Y las fecha de la reserva solo permite reservar una semana a partir del primer día que se seleccione. Además se pueden seleccionar fechas del pasado en la parte de las fechas de reservación.
+* En el campo “Select the Booking Days” se puede seleccionar una “Start Date” mayor que “End Date”.
+* En el campo _Edad_ se puede insertar cualquier edad.
 
 ## Crashes caused by button clicks
 
@@ -60,7 +60,7 @@ your user why he or she should use your app.
 - 2 errors related to this one.
 
 * No aparece información acerca de las cookies y la privacidad al entrar un usuario por primera vez en la página.
-* Los textos _Lorem ipsum ...._ indican que la página aún no ha sido terminada ni revisada minuciosamente.
+* Los textos _Lorem ipsum ...._ indican que la página aún no ha sido terminada ni revisada minuciosamente. Por ejemplo, la descripcion de los cinco primeros Alojamientos tienen este texto.
 
 ## Non-compliance with the description of the functional requirement.
 

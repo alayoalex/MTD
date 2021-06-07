@@ -25,7 +25,7 @@ function App() {
         <Route exact path="/book/" component={Book} />
         <Route exact path="/rooms/:slug" component={SingleRoom} />
         <Route exact path="/contact/" component={Contact} />
-        <Route component={Error} />
+        <Route exact path="/about/" component={Error} />
       </Switch>
     </>
   );

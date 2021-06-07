@@ -34,6 +34,9 @@ const Navbar = () => {
           <li>
             <Link to="/contact">Contact</Link>
           </li>
+          <li>
+            <Link to="/about">About Us</Link>
+          </li>
         </ul>
         {isLoggedIn ? <AmplifySignOut /> : null}
       </div>
